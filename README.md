@@ -3,3 +3,4 @@
     -Formulario Simple.
     -Formulario Complejo.
     -Formulario Registro (Incompleto).
+[28/09/2018] Completado Formulario Registro.
