@@ -49,6 +49,7 @@ public class Registro extends HttpServlet {
             }
             /*COMPROBAMOS SI EXISTEN ERRORES, SI NO HAY MOSTRAMOS EL RESULTADO DE LOS CAMPOS*/
             if(conteoErrores(errores)==0){
+            out.println("<showthem>");
                 out.println("<span>Nombre:</span><span>"+ mapa.get("nombre_ob")[0] +"</span><br>");
                 out.println("<span>Apellidos:</span><span>"+ mapa.get("apellidos")[0] +"</span><br>");
                 out.println("<span>Genero:</span><span>"+ mapa.get("genero")[0] +"</span><br>");
@@ -56,6 +57,7 @@ public class Registro extends HttpServlet {
                 out.println("<span>Usuario:</span><span>"+ mapa.get("usuario_ob")[0] +"</span><br>");
                 out.println("<span>Contraseña:</span><span>"+ mapa.get("password_ob")[0] +"</span><br>");
                 out.println("<span>Preferencias:</span><span>"+ chunkAficiones.replace('_', ',').substring(1) +"</span><br>");
+            out.println("</showthem>");
             }else{//SI HAY ERRORES VOLVEMOS A MOSTRAR EL FORMULARIO
                 /*INCLUSION DE MI JSCRIPT PARA RELLENAR LOS SELECT DE FECHA*/
                 out.println("<script>" +
@@ -88,19 +90,20 @@ public class Registro extends HttpServlet {
                 /*Repintamos el formulario del html linea a linea y colamos las evaluaciones*/
                 out.println("<form action=\""+request.getContextPath()+"/Registro\" method=\"post\">");
                     out.println("<fieldset>");
+                    out.println("<span class=\"bloque\">Datos personales:</span>");
                     /* Comprobamos los campos uno a uno y pintamos un resultado u otro dependiendo de la evaluacion del if */
                     if(mapa.get("nombre_ob")[0].length()>0){//si hemos obtenido nombre, mapa.get("nombre_ob")[0].length() será mayor de 1
                         out.println("<label for=\"nombre\">Nombre *</label><input type=\"text\" id=\"nombre\" name=\"nombre_ob\" value=\""+mapa.get("nombre_ob")[0]+"\">");
                     }else{//si no, pintamos lo mismo pero añadimos algun flag para representar el error             vvv
-                        out.println("<label for=\"nombre\">Nombre *</label><input type=\"text\" id=\"nombre\" name=\"nombre_ob\" error>");
+                        out.println("<label for=\"nombre\">Nombre *</label><input type=\"text\" id=\"nombre\" name=\"nombre_ob\" error><div></div>");
                     }
                     if(mapa.get("apellidos")[0].length()>0){//Hacemos lo mismo con apellido
                         out.println("<label for=\"apellidos\">Apellidos</label><input type=\"text\" id=\"apellidos\" name=\"apellidos\" value=\""+mapa.get("apellidos")[0]+"\">");
                     }else{
                         out.println("<label for=\"apellidos\">Apellidos</label><input type=\"text\" id=\"apellidos\" name=\"apellidos\">");
                     }
-
-                    out.println("<fieldset>");
+                    out.println("<span class=\"bloque\">Género</span>");
+                    out.println("<fieldset class=\"genero\">");
                         if(mapa.get("genero")[0].length()>0 && mapa.get("genero")[0].equals("Hombre")){//Con los radio tenemos que evaluar por cada uno de ellos
                             //Si llega  por verdadero, le ponemos checked
                             out.println("<input type=\"radio\" id=\"gen_hombre\" name=\"genero\" value=\"Hombre\" checked><label for=\"gen_hombre\" checked>Hombre</label>");
@@ -119,9 +122,9 @@ public class Registro extends HttpServlet {
                     out.println("</fieldset>");
                     out.println("<span class=\"bloque\">Fecha de nacimiento</span>");
                     if(errores[1].length()>0){
-                        out.println("<label>Día:</label><select error id=\"checkDias\" name=\"Dia\"></select>");
-                        out.println("<label>Mes:</label><select error id=\"checkMeses\" name=\"Mes\"></select>");
-                        out.println("<label>Año:</label><select error id=\"checkAnios\" name=\"Anio\"></select>");
+                        out.println("<label>Día:</label><select error id=\"checkDias\" name=\"Dia\"></select><div></div>");
+                        out.println("<label>Mes:</label><select error id=\"checkMeses\" name=\"Mes\"></select><div></div>");
+                        out.println("<label>Año:</label><select error id=\"checkAnios\" name=\"Anio\"></select><div></div>");
                     }else{
                         out.println("<label>Día:</label><select id=\"checkDias\" name=\"Dia\"></select>");
                         out.println("<label>Mes:</label><select id=\"checkMeses\" name=\"Mes\"></select>");
@@ -132,12 +135,12 @@ public class Registro extends HttpServlet {
                     if(mapa.get("usuario_ob")[0].length()>0){//si hemos obtenido nombre, mapa.get("nombre_ob")[0].length() será mayor de 1
                         out.println("<label obligatorio for=\"usuario_ob\">Usuario</label><input type=\"text\" id=\"usuario_ob\" name=\"usuario_ob\" value=\""+mapa.get("usuario_ob")[0]+"\">");
                     }else{//si no, pintamos lo mismo pero añadimos algun flag para representar el error             vvv
-                        out.println("<label obligatorio for=\"usuario_ob\">Usuario</label><input type=\"text\" id=\"usuario_ob\" name=\"usuario_ob\" error>");
+                        out.println("<label obligatorio for=\"usuario_ob\">Usuario</label><input type=\"text\" id=\"usuario_ob\" name=\"usuario_ob\" error><div></div>");
                     }
                     if(mapa.get("password_ob")[0].length()>0){//si hemos obtenido nombre, mapa.get("nombre_ob")[0].length() será mayor de 1
                         out.println("<label obligatorio for=\"password_ob\">Password</label><input type=\"password\" id=\"password_ob\" name=\"password_ob\" value=\""+mapa.get("password_ob")[0]+"\">");
                     }else{//si no, pintamos lo mismo pero añadimos algun flag para representar el error             vvv
-                        out.println("<label obligatorio for=\"password_ob\">Password</label><input type=\"password\" id=\"password_ob\" name=\"password_ob\" error>");
+                        out.println("<label obligatorio for=\"password_ob\">Password</label><input type=\"password\" id=\"password_ob\" name=\"password_ob\" error><div></div>");
                     }
                     out.println("<fieldset>");
                     out.println("<span class=\"bloque\">Preferencias:</span>");
@@ -163,8 +166,8 @@ public class Registro extends HttpServlet {
                         out.println("<label for=\"cine\">Cine</label><input type=\"checkbox\" name=\"aficiones\" value=\"Cine\" id=\"cine\">");
                     }
                     out.println("</fieldset>");
-                    out.println("");
                     out.println("</fieldset>");
+                    out.println("<span class=\"bloque\"></span>");
                     out.println("<input type=\"submit\" name=\"Enviar\" value=\"Enviar\">");
                     out.println("<input type=\"reset\" name=\"Limpiar\" value=\"Limpiar\">");
                 out.println("</form>");

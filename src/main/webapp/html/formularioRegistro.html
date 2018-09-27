@@ -13,13 +13,13 @@
             <section>
                 <form action="../Registro" method="post">
                     <fieldset>
+                        <span class="bloque">Datos personales:</span>
                         <label for="nombre">Nombre</label><input type="text" name="nombre_ob" id="nombre">
                         <label for="apellidos">Apellidos</label><input type="text" name="apellidos" id="apellidos">
-                        <fieldset>
+                        <span class="bloque">Género:</span>
+                        <fieldset class="genero">
                             <input type="radio" id="gen_hombre" name="genero" value="Hombre" checked><label for="gen_hombre">Hombre</label>
-                            <br>
                             <input type="radio" id="gen_mujer" name="genero" value="Mujer"><label for="gen_mujer">Mujer</label>
-                            <br>
                         </fieldset>
                         <span class="bloque">Fecha de nacimiento</span>
                         <label>Día:</label><select id="checkDias" name="Dia"></select>
@@ -37,6 +37,7 @@
                             <label for="cine">Cine</label><input type="checkbox" name="aficiones" value="Cine" id="cine">
                         </fieldset>
                     </fieldset>
+                    <span class="bloque"></span>
                     <input type="submit" name="Enviar" value="Enviar">
                     <input type="reset" name="Limpiar" value="Limpiar">
                 </form>

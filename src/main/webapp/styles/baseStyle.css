@@ -7,12 +7,28 @@ body{
     font-family: 'Roboto';
 }
 
+textarea:focus, input:focus{
+    outline: none;
+}
+
+h1,span,label{
+	-webkit-user-select: none; /* Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+/Edge */
+	user-select: none; /* Standard */
+}
+
 header{
     
 }
 
 header h1{
     text-align: center;
+    color:#233D4D;
+}
+h1{
+    text-align: center;
+    color:#233D4D;
 }
 
 main{
@@ -44,7 +60,7 @@ main{
 }
 
 a{
-    color:#619B8A;
+    color:#233D4D;
     text-decoration: none;
     font-weight: bold;
 }
@@ -73,7 +89,7 @@ form input[type="radio"]{
 }
 
 *[error]{
-    background-color:red;
+    background-color: #8e141475 !important;
 }
 
 form fieldset input[type="radio"]:not(last-child){
@@ -85,15 +101,158 @@ form fieldset input+label{
     display:inline-block;
 }
 
-form[action *="registro"] label,
-form[action *="registro"] label+select,
-form[action *="registro"] label+input[type="checkbox"]{
+form[action *="Registro"]{
+    text-align:center;
+}
+form[action *="Registro"] > fieldset{
+    text-align:left;
+    display: inline-block;
+    width: auto;
+}
+
+form[action *="Registro"] label,
+form[action *="Registro"] label+select,
+form[action *="Registro"] label+input[type="checkbox"]{
     display:inline-block;
-    margin:20px 10px;
+    margin: 0 10px;
+    padding: 8px;
+    vertical-align: middle;
+    margin-top: -4px;
+    background: #FE7F2D;
+    border: 0;
+    border-radius: 5px;
 }
 
 span.bloque{
     display:block;
+}
+
+/*fieldset.genero:before{
+    content:'GENERO:';
+    font-weight:bold;
+    position:absolute;
+    top:-10px;
+    left:-5px;
+}*/
+
+form[action *="Registro"] label{
+    background-color:#FE7F2D;
+    border-radius: 10px;
+    padding: 8px;
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+form[action *="Registro"] label[for]{
+    cursor:pointer;
+    display: inline-block;
+}
+
+fieldset.genero{
+    position:relative;
+    background-color:#FE7F2D;
+    border-radius: 10px;
+    padding: 5px 20px 5px 5px;
+    display: inline-block;
+}
+
+form[action *="Registro"] input[type="text"],
+form[action *="Registro"] input[type="password"]{
+    margin:0 15px;
+}
+
+form[action *="Registro"] input[type="submit"],
+form[action *="Registro"] input[type="reset"]{
+    display:inline-block;
+    border-radius:10px;
+    background-color:#233D4D;
+    padding:10px;
+    border:0;
+    color:white;
+}
+
+form[action *="Registro"] input{
+    display:inline-block;
+    border: 1px solid #233d4d;
+    background-color: #ffe08f;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+form[action *="Registro"] input,
+form[action *="Registro"] label{
+    vertical-align: middle;
+    display: inline-block;
+}
+
+form[action *="Registro"] span{
+    width: 70vw;
+    text-align:center;
+    color:white;
+    background-color:#233D4D;
+    height: 22px;
+    margin:20px 0 20px -10vw;
+}
+
+form[action *="Registro"] input[error]+div:before,
+form[action *="Registro"] input[error]+div:after{
+    left: 6px;
+    width: 5px;
+    height: 15px;
+    margin-top: -7px;
+    background: #c55500;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    margin: -8px 0 0;
+    background: #861212;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 6px;
+    top: 15px;
+}
+
+form[action *="Registro"] input[error]+div:before{
+    top: 16px;
+}
+
+form[action *="Registro"] input[error]+div{
+    position:relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-left: -8px;
+}
+
+form[action *="Registro"] input[error]+div:after{
+    left: 1px;
+    width: 15px;
+    height: 5px;
+    margin-top: -2px;
+}
+
+showthem{
+    padding:15px 0;
+}
+
+showthem span{
+    background-color:#FE7F2D;
+    border-radius: 10px;
+    padding: 8px;
+    margin: 5px 0;
+    display: inline-block;
+}
+
+showthem span+span{
+    background-color:transparent;
+}
+
+showthem+a{
+    margin-top: 20px;
+    display: inline-block;
 }
 
 /*
