@@ -1,0 +1,110 @@
+body{
+    background-color: #233D4D;
+    position: absolute;
+    top: 0;
+    margin: 0;
+    width: 100%;
+    font-family: 'Roboto';
+}
+
+header{
+    
+}
+
+header h1{
+    text-align: center;
+}
+
+main{
+    width:60%;
+    margin:0 20%;
+    background-color:#FCCA46;
+    position: absolute;
+    top: 0;
+    min-height: 100vh;
+    padding:0 5% 20px;
+    box-sizing:border-box;
+}
+
+.listas{
+    text-aign:center;
+}
+
+.bloque{
+    vertical-align:top;
+    font-family: 'Lato';
+    display:inline-block;
+    width:31%;
+}
+
+.bloque ol{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+a{
+    color:#619B8A;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+form{
+    margin: 15px 0;
+}
+
+fieldset{
+    border:0;
+    margin:0;
+    padding:0;
+}
+
+form label,
+form input, 
+form select{
+    display:block;
+    margin-bottom:10px;
+}
+
+form input[type="radio"]{
+    display:inline-block;
+    position: relative;
+    margin-right: 100px;
+}
+
+*[error]{
+    background-color:red;
+}
+
+form fieldset input[type="radio"]:not(last-child){
+    display:inline-block;
+    width:auto;
+    margin:10px;
+}
+form fieldset input+label{
+    display:inline-block;
+}
+
+form[action *="registro"] label,
+form[action *="registro"] label+select,
+form[action *="registro"] label+input[type="checkbox"]{
+    display:inline-block;
+    margin:20px 10px;
+}
+
+span.bloque{
+    display:block;
+}
+
+/*
+PALETA DE COLORES
+
+#A1C181 - Olivine
+#619B8A - Steel teal
+
+#FCCA46 - Sun Glow
+#FE7F2D - Princeton Orange
+#233D4D - Japanese Indigo
+
+*/
+

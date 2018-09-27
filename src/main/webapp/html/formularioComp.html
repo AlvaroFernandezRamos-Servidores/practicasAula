@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>FORMULARIO 2.0</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="../styles/baseStyle.css" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css?family=Lato|Roboto" rel="stylesheet">
+    </head>
+    <body>
+        <main>
+            <section>
+                <form action="../formularioSimple" method="post">
+                    <fieldset>
+                        <span>Datos personales</span>
+                        <label for="usuario">Usuario</label><input id ="usuario" type="text" name="usuario">
+                        <label for="passw">Contraseña</label><input id ="passw" type="password" name="passw">
+                        <label for="edad">Edad</label><input id ="edad" type="number" name="edad" value="21">
+                        <br>
+                        <span>Otros datos</span>
+                        <br>
+                        <div class="radioGroup">
+                            <label for="1">Soltero/a</label><input type="radio" id="1" value="Soltero/a" name="estado" checked>
+                            <label for="2">Casado/a</label><input type="radio" id="2" value="Casado/a" name="estado">
+                            <label for="3">Viudo/a</label><input type="radio" id="3" value="Viudo/a" name="estado">
+                            <label for="4">Divorciado/a</label><input type="radio" id="4" value="Divorciado/a" name="estado">
+                        </div>
+                        <label for="aficiones">Aficiones</label>
+                        <br>
+                        <select name="aficiones" multiple size="5">
+                            <option value="Deportes">Deportes</option>
+                            <option value="Musica">Música</option>
+                            <option value="Cine">Cine</option>
+                            <option value="Videojuegos">Videojuegos</option>
+                            <option value="Literatura">Literatura</option>  
+                        </select>
+                        <label for="comentarios" >Comentarios</label>
+                        <textarea name="comentarios" id="comentarios"></textarea>
+                        <br>
+                        <span>Medios tecnológicos</span>
+                        <br>
+                        <label>Dispones de internet:</label>
+                        <div class="radioGroup">
+                            <label for="si">Sí</label><input type="radio" value="Si" name="medio" id="si" checked>
+                            <label for="no">No</label><input type="radio" value="No" name="medio" id="no">
+                        </div>
+                        <label for="so">Sistema Operativo</label>
+                        <select name="so">
+                            <option value="Linux">Linux</option>
+                            <option value="Windows">Windows</option>
+                            <option value="MacOS">MacOS</option>
+                            <option value="Solaris">Solaris</option>
+                        </select>
+                        <input name="oculto" type="hidden" value="92385984">
+                        <input type="submit" name="Enviar" value="Enviar">
+                    </fieldset>
+                </form>
+            </section>
+        </main>
+    </body>
+</html>
