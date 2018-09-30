@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>FORMULARIO MAPA</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="../styles/baseStyle.css" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css?family=Lato|Roboto" rel="stylesheet">
+    </head>
+    <body>
+        <main>
+            <section>
+                <form action="../MostrarDatosMapa">
+                    <fieldset>
+                        <label for="nombre">Nombre</label><input type="text" name="nombre">
+                        <label for="email">Email</label><input type="text" name="email">
+                        <label for="marca">Marca</label><input type="checkbox" name="marcar" value="se ha marcado">
+                        <span class="bloque">Fecha de nacimiento</span>
+                        <label>Día:</label><select id="checkDias" name="Dia"></select>
+                        <label>Mes:</label><select id="checkMeses" name="Mes"></select>
+                        <label>Año:</label><select id="checkAnios" name="Anio"></select>
+                        <br>
+                        <input type="submit" name="Enviar" value="Enviar">
+                    </fieldset>
+                </form>
+            </section>
+        </main>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                let dias = document.getElementById('checkDias');
+                let dias_content = '';
+                for(let i=0;i<31;i++){
+                    dias_content+='<option value="'+(i+1)+'">'+(i+1)+'</option>';
+                }
+                dias.innerHTML=dias_content;
+                let mesesStrings = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+                let meses = document.getElementById('checkMeses');
+                let meses_content = '';
+                for(let i=0;i<12;i++){
+                    meses_content+='<option value="'+(i+1)+'">'+(mesesStrings[i])+'</option>';
+                }
+                meses.innerHTML=meses_content;
+                let anios = document.getElementById('checkAnios');
+                let anios_content = '';
+                for(let i=1970;i<2018;i++){
+                    anios_content+='<option value="'+(i+1)+'">'+(i+1)+'</option>';
+                }
+                anios.innerHTML=anios_content;
+            });
+        </script>
+    </body>
+</html>

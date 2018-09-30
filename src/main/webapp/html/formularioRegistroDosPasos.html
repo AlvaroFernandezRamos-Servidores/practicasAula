@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Formulario de registro</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="../styles/baseStyle.css" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css?family=Lato|Roboto" rel="stylesheet">
+    </head>
+    <body>
+        <main>
+            <h1>Formulario registro</h1>
+            <section>
+                <form action="../FormularioRegistroDosPasos" method="post">
+                    <fieldset>
+                        <span class="bloque">Datos personales:</span>
+                        <label for="nombre">Nombre</label><input type="text" name="nombre_ob" id="nombre">
+                        <label for="apellidos">Apellidos</label><input type="text" name="apellidos" id="apellidos">
+                        <span class="bloque">Género:</span>
+                        <fieldset class="genero">
+                            <input type="radio" id="gen_hombre" name="genero" value="Hombre" checked><label for="gen_hombre">Hombre</label>
+                            <input type="radio" id="gen_mujer" name="genero" value="Mujer"><label for="gen_mujer">Mujer</label>
+                        </fieldset>
+                        <span class="bloque">Fecha de nacimiento</span>
+                        <label>Día:</label><select id="checkDias" name="Dia"></select>
+                        <label>Mes:</label><select id="checkMeses" name="Mes"></select>
+                        <label>Año:</label><select id="checkAnios" name="Anio"></select>
+                        <br>
+                        <span class="bloque">Informacion general:</span>
+                        <label obligatorio for="usuario_ob">Usuario</label><input type="text" name="usuario_ob" id="usuario_ob">
+                        <label obligatorio for="password_ob">Password</label><input type="password" name="password_ob" id="password_ob">
+                        <fieldset>
+                            <span class="bloque">Preferencias:</span>
+                            <label for="deporte">Deporte</label><input type="checkbox" name="aficiones" value="Deporte" id="deporte">
+                            <label for="musica">Musica</label><input type="checkbox" name="aficiones" value="Musica" id="musica">
+                            <label for="coches">Coches</label><input type="checkbox" name="aficiones" value="Coches" id="coches">
+                            <label for="cine">Cine</label><input type="checkbox" name="aficiones" value="Cine" id="cine">
+                        </fieldset>
+                    </fieldset>
+                    <span class="bloque"></span>
+                    <input type="hidden" name="iteration" value="comeAgain">
+                    <input type="submit" name="Enviar" value="Enviar">
+                    <input type="reset" name="Limpiar" value="Limpiar">
+                </form>
+            </section>
+        </main>
+    </body>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                let dias = document.getElementById('checkDias');
+                let dias_content = '';
+                for(let i=0;i<31;i++){
+                    dias_content+='<option value="'+(i+1)+'">'+(i+1)+'</option>';
+                }
+                dias.innerHTML=dias_content;
+                let mesesStrings = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+                let meses = document.getElementById('checkMeses');
+                let meses_content = '';
+                for(let i=0;i<12;i++){
+                    meses_content+='<option value="'+(i+1)+'">'+(mesesStrings[i])+'</option>';
+                }
+                meses.innerHTML=meses_content;
+                let anios = document.getElementById('checkAnios');
+                let anios_content = '';
+                for(let i=1970;i<2018;i++){
+                    anios_content+='<option value="'+(i+1)+'">'+(i+1)+'</option>';
+                }
+                anios.innerHTML=anios_content;
+            });
+        </script>
+</html>
