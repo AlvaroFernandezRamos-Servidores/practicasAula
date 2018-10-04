@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Formulario Saludar jsp</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../styles/baseStyle.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lato|Roboto" rel="stylesheet">
+    </head>
+    <body>
+        <main>
+            <h1>Formulario registro</h1>
+            <section>
+                <form action="../JSP/saludo.jsp" method="post">
+                        <label for="nombre">Nombre</label><input type="text" name="nombre_ob" id="nombre">
+                        <label for="apellidos">Apellidos</label><input type="text" name="apellidos" id="apellidos">
+                        <span class="bloque">Género:</span>
+                        <fieldset class="genero">
+                            <input type="radio" id="gen_hombre" name="genero" value="Hombre" checked><label for="gen_hombre">Hombre</label>
+                            <input type="radio" id="gen_mujer" name="genero" value="Mujer"><label for="gen_mujer">Mujer</label>
+                        </fieldset>
+                        <br>
+                        <input type="submit" value="Enviar">
+                </form>
+            </section>
+        </main>
+    </body>
+</html>

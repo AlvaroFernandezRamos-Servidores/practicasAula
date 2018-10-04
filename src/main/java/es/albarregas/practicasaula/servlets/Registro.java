@@ -122,9 +122,10 @@ public class Registro extends HttpServlet {
                     out.println("</fieldset>");
                     out.println("<span class=\"bloque\">Fecha de nacimiento</span>");
                     if(errores[1].length()>0){
-                        out.println("<label>Día:</label><select error id=\"checkDias\" name=\"Dia\"></select><div></div>");
-                        out.println("<label>Mes:</label><select error id=\"checkMeses\" name=\"Mes\"></select><div></div>");
-                        out.println("<label>Año:</label><select error id=\"checkAnios\" name=\"Anio\"></select><div></div>");
+                        out.println("<label>Día:</label><select error id=\"checkDias\" name=\"Dia\"></select>");
+                        out.println("<label>Mes:</label><select error id=\"checkMeses\" name=\"Mes\"></select>");
+                        out.println("<label>Año:</label><select error id=\"checkAnios\" name=\"Anio\"></select>");
+                        out.println("<input error type=\"hidden\"><div></div>");
                     }else{
                         out.println("<label>Día:</label><select id=\"checkDias\" name=\"Dia\"></select>");
                         out.println("<label>Mes:</label><select id=\"checkMeses\" name=\"Mes\"></select>");

@@ -255,6 +255,13 @@ showthem+a{
     display: inline-block;
 }
 
+.show-message{
+    margin:30px 0;
+    border:1px solid #233D4D;
+    padding:15px;
+    border-radius:25px;
+}
+
 /*
 PALETA DE COLORES
 
@@ -266,4 +273,3 @@ PALETA DE COLORES
 #233D4D - Japanese Indigo
 
 */
-
