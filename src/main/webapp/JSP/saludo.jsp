@@ -14,11 +14,14 @@
     }else{
         genero = "señora";
     }
+    String path = request.getContextPath();
 %>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="../styles/baseStyle.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lato|Roboto" rel="stylesheet">
         <title>Saludo</title>
     </head>
     <body> 
@@ -27,6 +30,7 @@
             <section>
                 <span>Hola <%= genero  %> <%= nombre  %> <%= apellidos  %></span>
             </section>
+	    <a href="<%=path %>">Volver</a>
         </main>
     </body>
 </html>
