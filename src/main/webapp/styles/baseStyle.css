@@ -162,7 +162,8 @@ form[action *="Registro"] input[type="password"]{
 }
 
 form[action *="Registro"] input[type="submit"],
-form[action *="Registro"] input[type="reset"]{
+form[action *="Registro"] input[type="reset"],
+.botonera input[type="submit"]{
     display:inline-block;
     border-radius:10px;
     background-color:#233D4D;
@@ -269,15 +270,32 @@ showthem+a{
     border-radius:5px;
 }
 
-.calculadora input[type="submit"]{
+.calculadora fieldset label,
+.calculadora input[type="radio"]{
     border:0;
     display:inline-block;
-    color:white;
-    background-color: #233D4D;
     padding:3px 5px;
     cursor:pointer;
-    padding:5px;
-    border-radius:10px;
+}
+
+.show-message .fecha {
+    display:block;
+    font-weight: bold;
+    font-size:1.2em;
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.botonera input[type="text"]{
+    display:inline-block;
+    border: 1px solid #233d4d;
+    background-color: #ffe08f;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.botonera input[type="text"][name="valorCookie"]{
+    margin-bottom:30px;
 }
 
 /*
