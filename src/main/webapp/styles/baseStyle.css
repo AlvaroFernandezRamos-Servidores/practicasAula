@@ -262,6 +262,24 @@ showthem+a{
     border-radius:25px;
 }
 
+.calculadora input[type="number"]{
+    background-color:#ca9b2273;
+    border:1px solid #ffffff66;
+    padding:5px;
+    border-radius:5px;
+}
+
+.calculadora input[type="submit"]{
+    border:0;
+    display:inline-block;
+    color:white;
+    background-color: #233D4D;
+    padding:3px 5px;
+    cursor:pointer;
+    padding:5px;
+    border-radius:10px;
+}
+
 /*
 PALETA DE COLORES
 

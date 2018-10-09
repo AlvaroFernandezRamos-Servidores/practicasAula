@@ -1,13 +1,10 @@
 <%@page import="java.util.Map"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
-    //Cookie galleta;
     Cookie[] galletas = request.getCookies();
     Cookie galleta = null;
     String caducidad = "";
     String infoGalleta="";
-    //galleta.setMaxAge(-1);
-    //response.addCookie(galleta);
     
     String path = request.getContextPath();    
     
@@ -47,15 +44,6 @@
 	default: infoGalleta="<span>Nombre de la cookie: </span><span>"+galleta.getName()+"</span><br><span>Numero de visitas: </span><span>"+galleta.getValue()+"</span><br>"; break;
     }
 %>
-<!-- <c:if test="${visitas<0}">
-    <span>Se ha eliminado la cookie</span>
-</c:if>
-<c:if test="${visitas>0}">
-    <span>Número de visitas: <%=visitas %></span>
-</c:if>
-<c:if test="${visitas==1}">
-    <%=infoGalleta %>
-</c:if>-->
 <!DOCTYPE html>
 <html>
     <head>
