@@ -50,7 +50,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="../styles/baseStyle.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Lato|Roboto" rel="stylesheet">
-        <title>JSP Page</title>
+        <title>Conteo de visitas</title>
     </head>
     <body>
          <main>

@@ -28,9 +28,11 @@
     if(operacion != null){
 	if(operacion.equals("Crear") && request.getParameter("nombreCookie") == null || request.getParameter("valorCookie") == null){
 	    mensaje = "?response=Faltan campos necesarios para la creación de la cookie";mensaje.replace(" ","%20");
+	    problema=true;
 	}
 	if(operacion.equals("Consultar") && request.getParameter("nombreCookie") == null){
 	    mensaje = "?response=Necesito saber el nombre de la cookie para consultarla";mensaje.replace(" ","%20");
+	    problema=true;
 	}
 	if((operacion.equals("Consultar") || operacion.equals("Eliminar") || operacion.equals("Modificar")) && galleta == null){
 	    mensaje = "?response=La cookie seleccionada no existe";mensaje.replace(" ","%20");
@@ -38,9 +40,11 @@
 	}
 	if(operacion.equals("Modificar") && request.getParameter("nombreCookie") == null || request.getParameter("valorCookie") == null){
 	    mensaje = "?response=Faltan campos necesarios para la modificación";mensaje.replace(" ","%20");
+	    problema=true;
 	}
 	if(operacion.equals("Eliminar") && request.getParameter("nombreCookie") == null){
 	    mensaje = "?response=Necesito saber el nombre de la cookie para eliminarla";mensaje.replace(" ","%20");
+	    problema=true;
 	}
     }
     if(problema == false){
