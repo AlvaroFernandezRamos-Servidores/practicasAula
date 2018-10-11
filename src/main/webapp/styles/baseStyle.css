@@ -258,6 +258,10 @@ showthem+a{
     display: inline-block;
 }
 
+.show-message:empty{
+    display:none;
+}
+
 .show-message{
     margin:30px 0;
     border:1px solid #233D4D;
@@ -288,7 +292,7 @@ showthem+a{
     margin-bottom:20px;
 }
 
-.botonera input[type="text"]{
+.botonera input[type="text"],.botonera input[type="password"]{
     display:inline-block;
     border: 1px solid #233d4d;
     background-color: #ffe08f;
