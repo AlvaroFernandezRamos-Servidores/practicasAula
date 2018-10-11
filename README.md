@@ -46,11 +46,11 @@
 ## [11/10/2018] Incluida funcionalidad de Login
     La funcionalidad de Login consiste en 4 JSP relacionadas entre sí de la siguiente manera:
     
- -Login.jsp: 
+-Login.jsp: 
     Presenta un formulario de entrada donde el usuario puede introducir el nombre de usuario y contraseña. Adicionalmente puede marcar un check si desea que el sistema recuerda el userName.
- -controlLogin.jsp:
+-controlLogin.jsp:
     Controller, no tiene visualización. Valida que los valores del formulario de login lleguen y lleguen bien. De ser así redirige la navegación hasta el menú de usuario. De lo contrario navega de vuelta a login.jsp con parámetros que describen el error en la validación.
- -menu.jsp:
+-menu.jsp:
     Esta vista muestra al usuario un mensaje de saludo, indicando si es la primera vez que hizo login o la fecha de su último acceso al sistema. En la parte inferior existe un enlace que permite al usuario cerrar la sesión.
- -logout.jsp:
+-logout.jsp:
     Este controller invalida la sesión y navega hasta la página de login.
