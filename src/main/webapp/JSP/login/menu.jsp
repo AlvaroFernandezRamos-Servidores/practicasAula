@@ -13,6 +13,7 @@
 <%
     HttpSession sesion = request.getSession();
     ArrayList data = (ArrayList) sesion.getAttribute("userData");
+    // DEBIDO A LO QUE TE HE PUESTO EN controlLogin.jsp AQUÍ SIEMPRE ACCEDES A get(0)
     String mensaje="Bienvenido "+data.get(0);
     String visitas="";
     Cookie[] galletas = request.getCookies();
@@ -30,6 +31,7 @@
 		visitas = "Estuviste aquí por última vez el "+cal.get(Calendar.DAY_OF_MONTH) + " de " + StringUtils.capitalize(cal.getDisplayName(Calendar.MONTH, Calendar.LONG, new Locale("es","ES"))) + " de " + cal.get(Calendar.YEAR) + " a las " + (previous.getHours() < 10?"0"+previous.getHours():previous.getHours()) + ":" + (previous.getMinutes() < 10?"0"+previous.getMinutes():previous.getMinutes());
 		galleta.setValue(Long.toString(loginDate.getTime()));
 		response.addCookie(galleta);
+                // TENDRÍAS QUE ROMPER EL FOR
 	    }
 	}
     }

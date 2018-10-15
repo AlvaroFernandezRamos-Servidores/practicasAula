@@ -42,6 +42,7 @@
 	HttpSession sesion = request.getSession();
 	ArrayList data = new ArrayList<String>();
 	data.add(request.getParameter("user"));
+        // TAL Y COMO SE HA ENFOCADO EL EJERCICIO ALMACENAR UN ARRAYLIST EN LA SESIÓN NO TIENE SENTIDO
 	sesion.setAttribute("userData", data);
 	response.sendRedirect(path+"/JSP/login/menu.jsp");
     }else{
